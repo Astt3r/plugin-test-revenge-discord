@@ -1,7 +1,7 @@
 {
-  "id": "plugin.testrevenge",
-  "name": "Test Revenge 1.1",
-  "description": "Plugin de prueba para Revenge",
+  "id": "personal.utils",
+  "name": "Personal Utils",
+  "description": "Utilidades personales para Discord",
   "authors": [
     {
       "name": "Alejandro",
@@ -9,17 +9,8 @@
     }
   ],
   "main": "index.js",
-  "version": "1.1.0",
-  "type": "plugin",
-  "spec": 3,
-  "display": {
-    "name": "Test Revenge 1.1",
-    "description": "Plugin de prueba para personalización de Discord",
-    "authors": [
-      {
-        "name": "Alejandro",
-        "id": "0"
-      }
-    ]
+  "version": "1.3.0",
+  "vendetta": {
+    "icon": "ic_settings_24px"
   }
 }
