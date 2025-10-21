@@ -4,10 +4,14 @@ Plugin personal para Revenge Discord.
 
 ## 📦 Instalación
 
+Agrega este repositorio en Revenge:
+
 ```
-https://raw.githubusercontent.com/Astt3r/plugin-test-revenge-discord/main/manifest.json
+https://raw.githubusercontent.com/Astt3r/plugin-test-revenge-discord/main/
 ```
 
-##  Autor
+O instala directamente desde el navegador de plugins.
+
+## 👤 Autor
 
 Alejandro

@@ -1,0 +1,9 @@
+{
+  "plugin.testrevenge": {
+    "version": "1.1.0"
+  },
+  "$meta": {
+    "name": "Alejandro's Plugins",
+    "description": "Personal plugin repository"
+  }
+}
