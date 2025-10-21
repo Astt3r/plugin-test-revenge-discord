@@ -1,12 +1,7 @@
-/**
- * Revenge/Bunny Plugin: Block Delete Channel
- * Bloquea la eliminación de canales en Discord móvil
- */
-
-export default (bunny) => {
+export default (bunny, definePlugin) => {
   const patches = [];
 
-  return {
+  return definePlugin({
     start() {
       bunny.plugin.logger.log("Plugin iniciado");
 
@@ -100,5 +95,5 @@ export default (bunny) => {
         bunny.metro.common.findAssetId("TrashIcon")
       );
     }
-  };
+  });
 };
