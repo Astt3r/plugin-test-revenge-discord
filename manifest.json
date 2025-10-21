@@ -1,0 +1,25 @@
+{
+  "id": "plugin.blockdeletechannel",
+  "name": "Block Delete Channel",
+  "description": "Bloquea la eliminación de canales ocultando los botones y opciones de eliminar",
+  "authors": [
+    {
+      "name": "Alejandro",
+      "id": "0"
+    }
+  ],
+  "main": "index.js",
+  "version": "1.0.0",
+  "type": "plugin",
+  "spec": 3,
+  "display": {
+    "name": "Block Delete Channel",
+    "description": "Bloquea la eliminación de canales ocultando los botones y opciones de eliminar",
+    "authors": [
+      {
+        "name": "Alejandro",
+        "id": "0"
+      }
+    ]
+  }
+}
