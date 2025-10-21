@@ -4,30 +4,28 @@ Plugin personal para Revenge Discord.
 
 ## 📦 Instalación
 
-**Opción 1: GitHub Pages (Recomendado)**
+**⚡ Opción recomendada - jsDelivr (sin caché):**
 
-Primero habilita GitHub Pages:
-1. Ve a tu repositorio en GitHub
-2. Settings → Pages
-3. Source: Deploy from a branch
-4. Branch: main → / (root)
-5. Save
-
-Luego usa esta URL en Revenge:
 ```
-https://astt3r.github.io/plugin-test-revenge-discord/
+https://cdn.jsdelivr.net/gh/Astt3r/plugin-test-revenge-discord@b694fa7/
 ```
 
-**Opción 2: jsDelivr CDN**
+**O con la versión main (puede tener caché):**
+
 ```
 https://cdn.jsdelivr.net/gh/Astt3r/plugin-test-revenge-discord@main/
 ```
 
-**Pasos:**
-1. Ve a Configuración → Plugins
-2. Toca "Add Repository" o el ícono "+"
-3. Pega una de las URLs de arriba (CON la barra `/` al final)
-4. El plugin "Test Revenge 1.1" aparecerá en la lista
+**🌐 GitHub Pages (necesitas habilitarlo primero):**
+
+1. Ve a tu repo → Settings → Pages
+2. Source: main branch, / (root)
+3. Luego usa: `https://astt3r.github.io/plugin-test-revenge-discord/`
+
+**Pasos en Revenge:**
+1. Configuración → Plugins → "Add Repository"
+2. Pega la URL (debe terminar con `/`)
+3. Busca "Test Revenge 1.1" en la lista
 
 ## 👤 Autor
 
