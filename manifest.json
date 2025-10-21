@@ -1,7 +1,7 @@
 {
-  "id": "plugin.blockdeletechannel",
-  "name": "Block Delete Channel",
-  "description": "Bloquea la eliminación de canales ocultando los botones y opciones de eliminar",
+  "id": "plugin.testrevenge",
+  "name": "Test Revenge 1.1",
+  "description": "Plugin de prueba para Revenge",
   "authors": [
     {
       "name": "Alejandro",
@@ -9,12 +9,12 @@
     }
   ],
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "plugin",
   "spec": 3,
   "display": {
-    "name": "Block Delete Channel",
-    "description": "Bloquea la eliminación de canales ocultando los botones y opciones de eliminar",
+    "name": "Test Revenge 1.1",
+    "description": "Plugin de prueba para personalización de Discord",
     "authors": [
       {
         "name": "Alejandro",
