@@ -1,72 +1,44 @@
-const patches = [];
-
 export default {
   onLoad() {
-    const { patcher, metro, logger } = this;
-    const { findByProps } = metro;
-
-    try {
-      // Patch: Bloquear eliminación de canales
-      const ChannelActions = findByProps("deleteChannel");
-      
-      if (ChannelActions?.deleteChannel) {
-        patches.push(
-          patcher.instead(
-            ChannelActions,
-            "deleteChannel",
-            (args, orig) => {
-              // Silenciosamente rechazar la operación
-              return Promise.resolve();
-            }
-          )
-        );
-      }
-
-      // Ocultar opción del menú contextual
-      const ContextMenuModule = findByProps("openContextMenu");
-      
-      if (ContextMenuModule?.openContextMenu) {
-        patches.push(
-          patcher.before(
-            ContextMenuModule,
-            "openContextMenu",
-            (args) => {
-              const [options] = args;
-              
-              if (options?.items) {
-                options.items = options.items.filter(item => {
-                  if (!item) return true;
-                  
-                  const label = String(item.label || '').toLowerCase();
-                  const id = String(item.id || '').toLowerCase();
-                  
-                  const shouldRemove = (
-                    (label.includes('delete') && label.includes('channel')) ||
-                    (id.includes('delete') && id.includes('channel')) ||
-                    (label.includes('eliminar') && label.includes('canal'))
-                  );
-                  
-                  return !shouldRemove;
-                });
-              }
-            }
-          )
-        );
-      }
-      
-    } catch (error) {
-      logger.error("Error:", error);
+    const patches = [];
+    const { findByProps } = this.metro;
+    
+    // Bloquear deleteChannel
+    const ChannelActions = findByProps("deleteChannel");
+    if (ChannelActions?.deleteChannel) {
+      patches.push(
+        this.patcher.instead(ChannelActions, "deleteChannel", () => {
+          return Promise.resolve();
+        })
+      );
     }
+
+    // Ocultar del menú
+    const ContextMenu = findByProps("openContextMenu");
+    if (ContextMenu?.openContextMenu) {
+      patches.push(
+        this.patcher.before(ContextMenu, "openContextMenu", (args) => {
+          const [opts] = args;
+          if (opts?.items) {
+            opts.items = opts.items.filter(i => {
+              if (!i) return true;
+              const l = String(i.label || '').toLowerCase();
+              const id = String(i.id || '').toLowerCase();
+              return !((l.includes('delete') && l.includes('channel')) || 
+                       (id.includes('delete') && id.includes('channel')) ||
+                       (l.includes('eliminar') && l.includes('canal')));
+            });
+          }
+        })
+      );
+    }
+    
+    this.patches = patches;
   },
 
   onUnload() {
-    // Limpiar patches
-    for (const unpatch of patches) {
-      try {
-        unpatch();
-      } catch {}
+    if (this.patches) {
+      this.patches.forEach(p => p?.());
     }
-    
-    patches.length = 0;
   }
 };
